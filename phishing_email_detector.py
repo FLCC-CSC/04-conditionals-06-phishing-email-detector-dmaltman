@@ -18,25 +18,25 @@ def main():
     phishing_detector()
 def phishing_detector():
 
-    subject_line = input("Enter the email subject line: ")
+    subject = input("Enter the email subject line: ")
     print()
     print("SECURITY ASSESSMENT:")
 
-    if "urgent" in subject_line.lower():
+    if "urgent" in subject.lower() or "immediate action required" in subject.lower():
         print("HIGH RISK: Possible phishing attempt.")
-    elif "immediate action required" in subject_line.lower():
-        print("HIGH RISK: Possible phishing attempt.")
-    elif "win" in subject_line.lower():
+    #elif "immediate action required" in subject_line.lower():
+    #   print("HIGH RISK: Possible phishing attempt.")
+    elif "win" in subject.lower() or "free" in subject.lower():
         print("MEDIUM RISK: Suspicious offer detected.")
-    elif "free" in subject_line.lower():
-        print("MEDIUM RISK: Suspicious offer detected.")  
-    elif "password reset" in subject_line.lower():  
+    #elif "free" in subject_line.lower():
+    #    print("MEDIUM RISK: Suspicious offer detected.")  
+    elif "password reset" in subject.lower():  
         print("LOW RISK: Verify legitmacy with sender.")
     else:
         print("No phishing indicators detected.")
     
     print('-' * 24)
-    print(f'Analyzed subject: {subject_line}')
+    print(f'Analyzed subject: {subject}')
 
 main()
 
